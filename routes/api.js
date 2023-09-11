@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const bodyParser = require("body-parser");
 const { getCatchProductInfo } = require("../apiConnectors/catch");
+const { getCostcoProductInfo } = require("../apiConnectors/costco");
 
 /**
  * Sends a JSON Response in the Format
@@ -40,6 +41,15 @@ router.get('/catch/product/:productId', async (req,res)=>{
     try {
         const {productId} = req.params;
         return sendResponse(res, 200, await getCatchProductInfo(productId));
+    } catch (err) {
+        return sendResponse(res, 500, err.message);
+    }
+})
+
+router.get('/costco/product/:productId', async (req,res)=>{
+    try {
+        const {productId} = req.params;
+        return sendResponse(res, 200, await getCostcoProductInfo(productId));
     } catch (err) {
         return sendResponse(res, 500, err.message);
     }

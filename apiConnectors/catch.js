@@ -4,7 +4,7 @@ const apiURL = "https://www.catch.com.au/api";
 /**
  * Gets Info from Catch Product Id
  * @param {string | number} catchProductId - Catch.com.au Product Id
- * @returns {Promise<{catchProductId: number, title: string, thumbnailImage: string, lowestPrice: {amount: number, currency: string}, lowestSeller: {id: string, name: string, slug: string}}>}
+ * @returns {Promise<{id: number, title: string, thumbnailImage: string, price: {amount: number, currency: string}, seller: {id: string, name: string, slug: string}}>}
  */
 async function getCatchProductInfo(catchProductId) {
     resp = await fetch(apiURL, {
@@ -56,11 +56,11 @@ async function getCatchProductInfo(catchProductId) {
         let offerPrice = offer.sellPrice;
         let offerSeller = offer.seller
         return {
-            catchProductId,
+            id: catchProductId,
             title,
             thumbnailImage,
-            lowestPrice: { amount: offerPrice.amount / 100, currency: offerPrice.currency },
-            lowestSeller: offerSeller
+            price: { amount: offerPrice.amount / 100, currency: offerPrice.currency },
+            seller: offerSeller
         }
     }
     throw Error("Unknown Error");
