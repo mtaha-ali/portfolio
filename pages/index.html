@@ -7,6 +7,8 @@
     <title>Muhammad Taha Ali</title>
     <link rel="shortcut icon" href="/public/img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="/public/css/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@5/dark.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
 </head>
 
 <body>
@@ -108,11 +110,11 @@
             </svg>
             <h1>Project Categories</h1>
             <div class="scrollRow">
-                <a href="/e-commerce">
+                <a href="/e-commerce" onclick="event.preventDefault(); Swal.fire('Under Construction','','error'); return false;">
                     <img src="/public/img/cart.webp" alt="Shopping Cart" loading="lazy">
                     E-Commerce
                 </a>
-                <a href="/roblox">
+                <a href="#" onclick="event.preventDefault(); Swal.fire('Nothing to show here yet','','error'); return false;">
                     <img src="/public/img/roblox logo.webp" alt="Roblox Logo" loading="lazy">
                     Roblox
                 </a>
