@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const bodyParser = require("body-parser");
+const { getCatchProductInfo } = require("../apiConnectors/catch");
 
 /**
  * Sends a JSON Response in the Format
@@ -33,6 +34,15 @@ router.use(express.json());
 
 router.get('/', async (req, res) => {
     return sendResponse(res,200);
+})
+
+router.get('/catch/product/:productId', async (req,res)=>{
+    try {
+        const {productId} = req.params;
+        return sendResponse(res, 200, await getCatchProductInfo(productId));
+    } catch (err) {
+        return sendResponse(res, 500, err.message);
+    }
 })
 
 // 404 Not Found

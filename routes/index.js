@@ -9,23 +9,23 @@ const path = require('path');
  * @param {number} [status=200] - Status Code to Send
  * @returns
  */
-function sendPage(res, page, status=200) {
-    return res.status(status).sendFile(path.join(__dirname,'../pages/',page));
+function sendPage(res, status = 200, page = "index.html") {
+    return res.status(status).sendFile(path.join(__dirname, '../pages/', page));
 }
 
 router.get('/', async (req, res) => {
-    return sendPage(res,"index.html");
+    return sendPage(res);
 })
 
 // 404 Not Found
 router.use((req, res) => {
-    return sendPage(res, "not_found.html", 404);
+    return sendPage(res, 404, "not_found.html");
 });
 
 // Error Handling
 router.use((err, req, res, next) => {
     console.log(err);
-    return sendPage(res, "unknown_error.html", 500);
+    return sendPage(res, 500, "unknown_error.html");
 })
 
 module.exports = router;
