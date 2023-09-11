@@ -5,7 +5,7 @@ require('dotenv').config();
 
 const app = express();
 const port = process.env.PORT || 8080;
-const cors_urls = process.env.CORS_URLS.length > 0 ? process.env.CORS_URLS.split(" ") : ["http://localhost:" + port];
+const cors_urls = process.env.CORS_URLS && process.env.CORS_URLS.length > 0 ? process.env.CORS_URLS.split(" ") : ["http://localhost:" + port];
 
 const apiRouter = require("./routes/api.js");
 const indexRouter = require("./routes/index.js");
