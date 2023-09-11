@@ -1,5 +1,5 @@
 :root {
-    --bodyBackground: no-repeat center/cover url('/public/img/background_1.png');
+    --bodyBackground: no-repeat center/cover url('/public/img/background_1.webp');
     --bodyTextColor: #fff;
     --bodyFontSize: 4.5rem;
 }
