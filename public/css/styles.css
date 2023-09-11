@@ -1,0 +1,123 @@
+:root {
+    --bodyBackground: no-repeat center/cover url('/public/img/background_1.png');
+    --bodyTextColor: #fff;
+    --bodyFontSize: 1rem;
+    --titleFontSize: 3em;
+    --skillsFontSize: 1.5em;
+}
+
+body {
+    margin: 0;
+    width: 100dvw;
+    height: 100dvh;
+
+    text-align: center;
+    font-family: sans-serif;
+    overflow: hidden;
+
+    background: var(--bodyBackground);
+    color: var(--bodyTextColor);
+    font-size: var(--bodyFontSize);
+}
+
+main {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    transition: translate 0.5s;
+}
+
+main#page1 {
+    translate: 0;
+}
+
+main#page2 {
+    translate: 0 -100%;
+}
+
+main#page3 {
+    translate: 0 -200%;
+}
+
+.container {
+    flex: 0 0 auto;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-size: var(--titleFontSize);
+}
+
+#profilePhoto {
+    max-width: 50dvw;
+    max-height: 50dvh;
+}
+
+.icon {
+    width: 4rem;
+    height: 4rem;
+    cursor: pointer;
+}
+
+.scrollRow {
+    max-width: 80%;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    overflow-x: auto;
+    margin-bottom: 10px;
+}
+
+.scrollRow::-webkit-scrollbar {
+    height: 5px;
+}
+
+.scrollRow::-webkit-scrollbar-thumb {
+    background: white;
+    border-radius: 5px;
+}
+
+.scrollRow > * {
+    flex: 0 0 auto;
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 10px;
+    font-size: var(--skillsFontSize);
+}
+
+.scrollRow > * > img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: contain;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+} 
+
+.links {
+    margin: 10px 0px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.links svg {
+    width: 2rem;
+    height: 2rem;
+}
