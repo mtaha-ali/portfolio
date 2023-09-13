@@ -107,7 +107,12 @@ h1 {
 
 .scrollRow a, .links a {
     color: white;
-} 
+}
+
+.skills > * {
+    width: min(150px, 40%);
+}
+
 
 .links {
     margin: 10px 0px;
