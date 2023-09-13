@@ -17,6 +17,14 @@ router.get('/', async (req, res) => {
     return sendPage(res);
 })
 
+router.get('/e-commerce',async(req,res)=>{
+    return sendPage(res, 200, "ecommerce.html")
+})
+
+router.get('/roblox',async(req,res)=>{
+    return sendPage(res, 200, "roblox.html")
+})
+
 // 404 Not Found
 router.use((req, res) => {
     return sendPage(res, 404, "not_found.html");
