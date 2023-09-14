@@ -1,5 +1,5 @@
 # Portfolio Website
-### [Live Website Link](https://mtaha-ali.vercel.app/)
+### [Live Website Link](https://mtaha-ali.vercel.app)
 
 ## Technologies Used
 - Express.JS (Backend)
